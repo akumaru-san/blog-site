@@ -1,0 +1,11 @@
+from app import db
+
+class Blog(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100),nullable=False)
+    body = db.Column(db.String(1000),nullable=False)
+
+    def __init__(self, title, body):
+        self.title = title
+    
+db.create_all()
